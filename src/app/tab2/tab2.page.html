@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+        BMR
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div style="text-align: center;">
+    <ion-toolbar>
+      <ion-title>BMR Calculator</ion-title>
+    </ion-toolbar>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input [(ngModel)]="Height" label="Height: " type="number" [clearInput]="true" placeholder="Enter Height (CM)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="Weight" label="Weight: " type="number" [clearInput]="true" placeholder="Enter Weight (KG)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="Age"  label="Age: " type="number" [clearInput]="true" placeholder="Enter age (year)"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-radio-group [(ngModel)]="Gender">
+    <ion-item>
+      <ion-col>
+        <ion-radio   value="Male">Male</ion-radio>
+      </ion-col>
+      <ion-col>
+        <ion-radio value="Female">Female</ion-radio>
+      </ion-col>
+    </ion-item>
+  </ion-radio-group>
+ 
+
+ 
+  <ion-alert id="present-alert" header="BMR : {{ SumBMR }}">
+    <ion-content>
+      <div>BMR : {{ SumBMR }}</div>
+    </ion-content>
+  </ion-alert>
+  
+  <div style="text-align: center;">
+  <ion-button  [routerLink]="'/tabs/tab1'">BMI</ion-button>
+  <ion-button  (click)=" checkGender()">CAL!</ion-button>
+  <ion-button  [routerLink]="'/tabs/tab3'">Info</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="Finish"
+  
+></ion-alert>
